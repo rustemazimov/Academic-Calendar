@@ -2,25 +2,27 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Slider?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomePageController">
    <children>
       <BorderPane layoutX="52.0" layoutY="71.0" prefHeight="500.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <MenuBar BorderPane.alignment="CENTER">
+            <MenuBar style="-fx-background-color: #93A2BD; -fx-border-color: #121832;" BorderPane.alignment="CENTER">
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
@@ -32,16 +34,24 @@
                     <MenuItem mnemonicParsing="false" text="Delete" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Help">
+                <Menu mnemonicParsing="false" text="Add">
                   <items>
                     <MenuItem mnemonicParsing="false" text="About" />
                   </items>
                 </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                     </items>
+                  </Menu>
               </menus>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </MenuBar>
          </top>
          <left>
-            <VBox prefHeight="475.0" prefWidth="178.0" style="-fx-background-color: #A98EC4;" BorderPane.alignment="CENTER">
+            <VBox prefHeight="475.0" prefWidth="178.0" style="-fx-background-color: #DBBBD3#DBBBD3; -fx-border-color: #C1D0EB;" BorderPane.alignment="CENTER">
                <children>
                   <HBox prefHeight="49.0" prefWidth="178.0">
                      <children>
@@ -53,36 +63,151 @@
                               <Insets left="10.0" top="10.0" />
                            </HBox.margin>
                         </TextField>
-                        <Button fx:id="buttonid" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" style="-fx-border-color: #4B23C4; -fx-border-radius: 15;" text="Search">
+                        <Button fx:id="buttonid" mnemonicParsing="false" prefHeight="22.0" prefWidth="64.0" style="-fx-border-color: #A778BB; -fx-background-color: #F7F3F0; -fx-border-radius: 15; -fx-background-radius: 15; -fx-border-width: 3;" text="Search" textFill="#6271b3">
                            <HBox.margin>
                               <Insets left="10.0" top="10.0" />
                            </HBox.margin>
-                           <font>
-                              <Font size="11.0" />
-                           </font>
                         </Button>
                      </children>
                   </HBox>
                   <AnchorPane prefHeight="428.0" prefWidth="178.0">
                      <children>
-                        <Slider layoutX="164.0" orientation="VERTICAL" prefHeight="427.0" prefWidth="14.0" />
+                        <Slider layoutX="169.0" layoutY="1.0" orientation="VERTICAL" prefHeight="427.0" prefWidth="14.0" />
+                        <Label layoutX="16.0" layoutY="6.0" prefHeight="20.0" prefWidth="139.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-region-border: 30;" text=" Today 28/12/17   " textFill="#6271b3">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="43.0" prefHeight="28.0" prefWidth="139.0" text="Event      8.00-9.00 AM" textFill="#f8f4f4">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="13.0" layoutY="74.0" prefHeight="24.0" prefWidth="140.0" text="Event    10.00-12.00 AM" textFill="#f2eded">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="105.0" prefHeight="23.0" prefWidth="143.0" text="Event      1.00-2.00  PM" textFill="#eeeeee">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="12.0" layoutY="147.0" prefHeight="30.0" prefWidth="147.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Tomorrow 29/12/17" textFill="#6271b3">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="184.0" prefHeight="25.0" prefWidth="136.0" text="Event     8.00-9.00 AM" textFill="#f5f5f5">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="214.0" prefHeight="26.0" prefWidth="141.0" text="Event    10.00-12.00 AM" textFill="#f2efef">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="242.0" prefHeight="25.0" prefWidth="145.0" text="Event    2.00-3.00 PM" textFill="#f8f8f8">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="11.0" layoutY="275.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-region-border: #A778BB;" text=" Sunday  30/12/17" textFill="#6271b3">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="308.0" prefHeight="17.0" prefWidth="135.0" text="Event     8.00-9.00 AM" textFill="#f5ecec">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="338.0" prefHeight="17.0" prefWidth="140.0" text="Event    10.00-12.00 AM" textFill="#ebe7e7">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="370.0" prefHeight="17.0" prefWidth="138.0" text="Event    1.00-2.00  PM" textFill="#f2eded">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                </children>
             </VBox>
          </left>
          <center>
-            <TableView fx:id="tableviewid" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-              <columns>
-                <TableColumn fx:id="column1" prefWidth="75.0" text="C1" />
-                <TableColumn fx:id="column2" prefWidth="75.0" text="C2" />
-                  <TableColumn fx:id="column3" prefWidth="75.0" text="C3" />
-                  <TableColumn fx:id="column4" prefWidth="75.0" text="C4" />
-                  <TableColumn fx:id="column5" prefWidth="75.0" text="C5" />
-                  <TableColumn fx:id="column6" prefWidth="75.0" text="C6" />
-                  <TableColumn fx:id="column7" prefWidth="75.0" text="C7" />
-              </columns>
-            </TableView>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #6E7DBF;" BorderPane.alignment="CENTER">
+               <children>
+                  <MenuButton layoutX="42.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="   Day">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="1" />
+                      <MenuItem mnemonicParsing="false" text="2" />
+                        <MenuItem mnemonicParsing="false" text="3" />
+                        <MenuItem mnemonicParsing="false" text="4" />
+                        <MenuItem mnemonicParsing="false" text="5" />
+                        <MenuItem mnemonicParsing="false" text="6" />
+                        <MenuItem mnemonicParsing="false" text="7" />
+                        <MenuItem mnemonicParsing="false" text="8" />
+                        <MenuItem mnemonicParsing="false" text="9" />
+                        <MenuItem mnemonicParsing="false" text="10" />
+                    </items>
+                  </MenuButton>
+                  <MenuButton layoutX="162.0" layoutY="10.0" mnemonicParsing="false" text="Week">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="1" />
+                      <MenuItem mnemonicParsing="false" text="2" />
+                        <MenuItem mnemonicParsing="false" text="3" />
+                        <MenuItem mnemonicParsing="false" text="4" />
+                    </items>
+                  </MenuButton>
+                  <MenuButton layoutX="279.0" layoutY="10.0" mnemonicParsing="false" text="Month">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="January" />
+                      <MenuItem mnemonicParsing="false" text="February" />
+                        <MenuItem mnemonicParsing="false" text="March " />
+                        <MenuItem mnemonicParsing="false" text="April " />
+                        <MenuItem mnemonicParsing="false" text="May " />
+                        <MenuItem mnemonicParsing="false" text="June " />
+                    </items>
+                  </MenuButton>
+                  <MenuButton layoutX="401.0" layoutY="10.0" mnemonicParsing="false" text="Year">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="2017" />
+                      <MenuItem mnemonicParsing="false" text="2016" />
+                        <MenuItem mnemonicParsing="false" text="2015" />
+                        <MenuItem mnemonicParsing="false" text="2014" />
+                        <MenuItem mnemonicParsing="false" text="2013" />
+                        <MenuItem mnemonicParsing="false" text="2012" />
+                    </items>
+                  </MenuButton>
+                  <GridPane layoutX="32.0" layoutY="123.0" prefHeight="318.0" prefWidth="446.0">
+                    <columnConstraints>
+                        <ColumnConstraints fx:id="firstcol" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fx:id="secondcol" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fx:id="thirdcol" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints fx:id="fourthcol" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fx:id="fifthcol" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fx:id="sixcol" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints fx:id="sevencol" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="119.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="107.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+                  <Label layoutX="168.0" layoutY="48.0" prefHeight="45.0" prefWidth="118.0" text="Month" textFill="#c1d0eb">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
          </center>
       </BorderPane>
    </children>
